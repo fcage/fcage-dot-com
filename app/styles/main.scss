@@ -1,0 +1,406 @@
+
+@import "animation";
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+
+
+
+
+$lightblue: #3A6EA5;
+$blue: #004E98;
+
+$darkgray: #474748; //#C0C0C0;
+$lightgray: #EBEBEB;
+$green: #8ACB88;
+$yellow: #FFDB2B;
+$red: #FF3A3A;
+$white: #fff;
+
+$serif: 'Roboto Slab', serif;
+$sans: 'Abel', Helvetica, Arial, sans;
+
+html, body {
+  margin: 0;
+}
+
+a, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-family: $serif;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  @media (min-width: 960px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &.funFact {
+    border-top: 1px dotted $lightgray;
+    font-family: $sans;
+    margin-top: 60px;
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+li {
+  font-family: $serif;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 20px;
+  .bullet {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 12px;
+    @media (min-width: 960px) {
+      font-size: 14px;
+    }
+  }
+
+}
+
+h1 {
+  font-family: $sans;
+  font-size: 96px;
+  color: $white;
+  line-height: 84px;
+  margin-top: 0;
+  font-weight: normal;
+}
+
+
+h3 {
+  font-family: $sans;
+  font-size: 32px;
+  line-height: 36px;
+
+  @media (min-width: 960px) {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  margin-top: 0;
+}
+
+#logo {
+  margin-bottom: 100px;
+}
+
+.logo-main {
+  fill:  rgba(235,235,211,0.15);
+}
+
+.logo-inset {
+  fill: $yellow;
+}
+
+.down-arrow {
+    display:inline-block;
+    border-radius: 40px;
+    padding: 10px;
+    font-size: 25px;
+    color: $lightgray;
+    //border: 1px solid $yellow;
+}
+
+
+.slice {
+  background: $lightgray;
+  padding: 50px 5px;
+}
+
+.slice-1 {
+  background: $blue;
+  color: $yellow;
+
+}
+
+.slice-2 {
+  background: $lightgray;
+  color: $darkgray;
+  padding-bottom: 100px;
+  min-height: 480px;
+
+  p {
+
+
+      @media (min-width: 960px) {
+        font-size: 22px;
+        line-height: 30px;
+      }
+  }
+}
+
+.slice-3 {
+  background: $darkgray;
+  color: $lightgray;
+}
+
+
+.slice-4 {
+  background: $lightblue;
+  color: $lightgray;
+
+  min-height: 40px;
+
+  @media (min-width: 960px) {
+    min-height: 540px;
+  }
+
+  .phone {
+    margin-top: 20px;
+    height: 375px;
+    width: 125%;
+    
+    @media (min-width: 960px) {
+      height: 375px;
+      width: 667px;
+    }
+
+    position: relative;
+    border-radius: 30px;
+    border: 1px solid $lightgray;
+    
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 30px);
+      width: 60px;
+      height: 60px;
+      border: 1px solid #fff;
+      border-radius: 100px;
+
+    }
+
+    .phone-inside {
+      position: absolute;
+      overflow: hidden;
+      top: 30px;
+      left: 30px;
+      bottom: 30px;
+      right: 80px;
+      background: rgba(255,255,255, .5);
+      border: 1px solid #fff;
+      color: $darkgray;
+    
+      font-size: 18px;
+
+      .incoming-message {
+
+        float: left;
+        margin: 8px 0 8px 40px;
+        background-color: $lightgray;
+        position: relative;
+        -moz-border-radius: 6px 6px 6px 0;
+        -webkit-border-radius: 6px 6px 6px 0;
+        border-radius: 6px 6px 6px 0;
+
+        width: 65%;
+        text-align: left;
+        padding: 10px 20px;
+        display: inline;
+
+        &:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: -10px;
+            width: 0;
+            border-style: solid;
+            border-width: 12px 12px 0 0;
+            border-color: transparent $lightgray;
+        }
+      }
+
+      .outgoing-message {
+  
+        float: right;
+        margin: 8px 40px 8px 0;
+        background-color: $yellow;
+        position: relative;
+        -moz-border-radius: 6px 6px 0 6px;
+        -webkit-border-radius: 6px 6px 0 6px;
+        border-radius: 6px 6px 0 6px;
+
+        width: 65%;
+        text-align: left;
+        padding: 10px 20px;
+        display: inline;
+
+        &:after {
+            content: " ";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            width: 0;
+            border-style: solid;
+            border-width: 12px 0 0 12px;
+            border-color: transparent $yellow;
+        }
+      }
+    }
+  }
+
+}
+
+.slice-5 {
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: url('../images/panama-houses-860.jpg');
+  min-height: 480px;
+  background-color: $yellow;
+  color: #333;
+
+  @media (min-width: 960px) {
+    background-size: 100%;
+    min-height: 540px;
+    background-position: center 15%;  
+    background-image: url('../images/panama-houses.jpg');
+  }
+  
+  ul {
+    margin-top: 10px;
+    border-left: 1px dotted #333;
+    padding-left: 10px;
+  }
+}
+
+.slice-6{
+  
+  background-size: 180%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-image: url('../images/mekong-860.png');
+  min-height: 440px;
+  background-color: $green;
+  color: #333;
+
+  @media (min-width: 960px) {
+    background-size: 120%;
+    background-position: center 75%;
+    min-height: 540px;
+    background-image: url('../images/mekong.png');
+  }
+
+}
+
+.slice-7{
+  position: relative;
+  background-size: 180%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  min-height: 440px;
+  background-color: $red;
+  color: #fff;
+  overflow: hidden;
+
+  @media (min-width: 960px) {
+    background-size: 120%;
+    background-position: center 75%;
+    min-height: 540px;
+  }
+
+
+
+}
+
+.mapSvg {
+    position: absolute;
+    left: calc((100% - 1170px)/2 + 480px);
+    top: 0;
+    max-width: 100%;
+    height: 700px;
+
+    svg {
+      path {
+        fill: none;
+        stroke: $darkgray;
+      }
+
+    }
+  }
+
+.tagline {
+
+  font-size: 24px;
+  line-height: 28px;
+
+  @media (min-width: 960px) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.social-btns {
+  border-left: 1px dotted $darkgray;
+  padding-left: 10px;
+}
+
+.social-btn {
+  color: $blue;
+  font-family: $sans;
+  dispaly: block;
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 28px;
+
+  a {
+    text-decoriation: none;
+    color: $blue;
+  }
+}
+
+.clip {
+  
+  border: 1px solid rgba(255,255,255,.2);
+  position: relative;
+  margin-bottom: 30px;
+
+  img {
+    width: 100%;
+  }
+
+  .clip-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: $serif;
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 85%;
+    color: $blue;
+    
+    span {
+      display: inline;
+      background: #fff;
+      box-shadow: 5px 0 #fff, -5px 0 0 #fff;
+    }
+    
+  }
+
+}

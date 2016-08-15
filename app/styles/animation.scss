@@ -1,0 +1,37 @@
+@function get-pct($n,$offset) {
+  @return 10% * (5 - $n) + $offset;
+}
+
+.animation-message {
+  opacity: 0;
+}
+
+
+$i: 5;
+@while $i > 0 {
+  .showMessages .animation-#{6-$i} { 
+    opacity: 0;
+    animation-name: fadein- + $i;
+    animation-duration: 20s;
+    adnimation-delay: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+  }
+
+
+  @keyframes fadein-#{$i}  {
+
+    #{get-pct($i, 0%)}   {opacity: 0}
+    #{get-pct($i, 7.5%)}   {opacity: 1}
+    100%  {opacity:1}
+  }
+
+
+  $i: $i - 1;
+}
+
+
+
+
+
