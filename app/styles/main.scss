@@ -28,6 +28,10 @@ html, body {
   margin: 0;
 }
 
+.hide-mobile {
+  display: none;
+}
+
 a, a:visited, a:active {
   color: inherit;
   text-decoration: none;
@@ -41,16 +45,20 @@ p {
   margin-top: 0;
   @media (min-width: 960px) {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 28px;
   }
 
   &.funFact {
     border-top: 1px dotted $lightgray;
     font-family: $sans;
-    margin-top: 60px;
+    margin-top: 100px;
     padding-top: 10px;
     font-size: 16px;
     line-height: 20px;
+  }
+
+  a {
+    text-decoration: underline;
   }
 }
 
@@ -125,7 +133,7 @@ h3 {
 
 .slice {
   background: $lightgray;
-  padding: 50px 5px;
+  padding: 80px 5px;
 }
 
 .slice-1 {
@@ -137,15 +145,15 @@ h3 {
 .slice-2 {
   background: $lightgray;
   color: $darkgray;
-  padding-bottom: 100px;
+  padding: 80px 0;
   min-height: 480px;
 
   p {
 
 
       @media (min-width: 960px) {
-        font-size: 22px;
-        line-height: 30px;
+            font-size: 24px;
+            line-height: 36px;
       }
   }
 }
@@ -168,58 +176,85 @@ h3 {
 
   .phone {
     margin-top: 20px;
-    height: 375px;
-    width: 125%;
+    height:400px;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid $lightgray;
     
     @media (min-width: 960px) {
       height: 375px;
       width: 667px;
+      border-radius: 30px;
     }
 
-    position: relative;
-    border-radius: 30px;
-    border: 1px solid $lightgray;
+
     
 
     &:after {
       content: ' ';
       position: absolute;
-      right: 10px;
-      top: calc(50% - 30px);
-      width: 60px;
-      height: 60px;
+
+      left: calc(50% - 15px);
+      bottom: 5px;
+      width: 30px;
+      height: 30px;
       border: 1px solid #fff;
-      border-radius: 100px;
+       border-radius: 100px;
+
+      @media (min-width: 960px) {
+      left: auto;
+        right: 10px;
+        top: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
+        border: 1px solid #fff;
+        border-radius: 100px;
+      }
 
     }
 
     .phone-inside {
       position: absolute;
       overflow: hidden;
-      top: 30px;
-      left: 30px;
-      bottom: 30px;
-      right: 80px;
+      top: 15px;
+      left: 15px;
+      bottom: 40px;
+      right: 15px;
       background: rgba(255,255,255, .5);
       border: 1px solid #fff;
       color: $darkgray;
+      font-size: 14px;
+
+      @media (min-width: 960px) {
+        font-size: 18px;
+        top: 30px;
+        left: 30px;
+        bottom: 30px;
+        right: 80px;
+      }
     
-      font-size: 18px;
+      
 
       .incoming-message {
 
         float: left;
-        margin: 8px 0 8px 40px;
+        margin: 8px 0 8px 20px;
         background-color: $lightgray;
         position: relative;
         -moz-border-radius: 6px 6px 6px 0;
         -webkit-border-radius: 6px 6px 6px 0;
         border-radius: 6px 6px 6px 0;
-
-        width: 65%;
+        width: 80%;
         text-align: left;
-        padding: 10px 20px;
+        padding: 8px 10px;
         display: inline;
+
+        @media (min-width: 960px) {
+          margin: 8px 0 8px 40px;
+          width: 65%;
+          padding: 10px 20px;
+        }
 
         &:after {
             content: " ";
@@ -237,17 +272,23 @@ h3 {
       .outgoing-message {
   
         float: right;
-        margin: 8px 40px 8px 0;
+        margin: 8px 20px 8px 0;
         background-color: $yellow;
         position: relative;
         -moz-border-radius: 6px 6px 0 6px;
         -webkit-border-radius: 6px 6px 0 6px;
         border-radius: 6px 6px 0 6px;
 
-        width: 65%;
+        width: 80%;
         text-align: left;
-        padding: 10px 20px;
+        padding: 8px 10px;
         display: inline;
+
+        @media (min-width: 960px) {
+          margin: 8px 0 8px 40px;
+          width: 65%;
+          padding: 10px 20px;
+        }
 
         &:after {
             content: " ";
@@ -272,15 +313,21 @@ h3 {
   background-repeat: no-repeat;
   background-position: bottom;
   background-image: url('../images/panama-houses-860.jpg');
-  min-height: 480px;
+  min-height: 540px;
   background-color: $yellow;
   color: #333;
 
   @media (min-width: 960px) {
-    background-size: 100%;
+    background-size: calc(100% - 100px);
     min-height: 540px;
     background-position: center 15%;  
     background-image: url('../images/panama-houses.jpg');
+  }
+
+  @media (min-width: 1170px) {
+    background-size: 1170px;
+    min-height: 540px;
+    background-position: center -25%;  
   }
   
   ul {
@@ -292,29 +339,32 @@ h3 {
 
 .slice-6{
   
-  background-size: 180%;
+  background-size: 300%;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: 40% bottom;
   background-image: url('../images/mekong-860.png');
-  min-height: 440px;
+  min-height: 540px;
   background-color: $green;
   color: #333;
 
   @media (min-width: 960px) {
     background-size: 120%;
-    background-position: center 75%;
+    background-position: center 120%;
     min-height: 540px;
     background-image: url('../images/mekong.png');
+  }
+
+  @media (min-width: 1300px) {
+    background-size: 1600px;
+    min-height: 540px;
+    background-position: center 110%;  
   }
 
 }
 
 .slice-7{
   position: relative;
-  background-size: 180%;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  min-height: 440px;
+  min-height: 540px;
   background-color: $red;
   color: #fff;
   overflow: hidden;
@@ -326,20 +376,33 @@ h3 {
   }
 
 
+  .funFact {
+    margin-top: 180px;
+  }
 
 }
 
 .mapSvg {
     position: absolute;
-    left: calc((100% - 1170px)/2 + 480px);
-    top: 0;
-    max-width: 100%;
-    height: 700px;
 
+      left: -20%;
+      top: 50px;
+      max-width: 50%;
+      height: 300px;
+
+
+    @media (min-width: 960px) {
+      left: calc((100% - 1170px)/2 + 360px);
+      top: 0;
+      margin-top: 60px;
+      width: 100%;
+      height: 540px;
+    }
     svg {
+
       path {
         fill: none;
-        stroke: $darkgray;
+        stroke: $blue;
       }
 
     }
@@ -390,8 +453,8 @@ h3 {
     bottom: 10px;
     left: 10px;
     font-family: $serif;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 22px;
+    line-height: 28px;
     max-width: 85%;
     color: $blue;
     

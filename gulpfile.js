@@ -1,4 +1,5 @@
 // generated on 2016-07-09 using generator-webapp 2.1.0
+const fs = require("fs");
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -7,10 +8,24 @@ const wiredep = require('wiredep').stream;
 const handlebars = require('handlebars');
 const gulpHandlebars = require('gulp-handlebars-html')(handlebars); //default to require('handlebars') if not provided 
 const rename = require('gulp-rename');
+const s3 = require("gulp-s3");
+const gzip = require("gulp-gzip");
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+gulp.task('upload', function () {
+  var aws = JSON.parse(fs.readFileSync('./s3/config.json'));
+
+  var options = { 
+      headers:  {'Cache-Control': 'max-age=60, no-transform, public'},
+      // gzippedOnly: true 
+  }
+
+  return gulp.src('./dist/**')
+      // .pipe(gzip())
+      .pipe(s3(aws, options));
+});
 
 gulp.task('render', function () {
     var templateData = {},
@@ -180,6 +195,8 @@ gulp.task('wiredep', () => {
     }))
     .pipe(gulp.dest('app'));
 });
+
+gulp.task('deploy', ['upload'])
 
 gulp.task('build', ['lint', 'render', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
