@@ -285,7 +285,7 @@ h3 {
         display: inline;
 
         @media (min-width: 960px) {
-          margin: 8px 0 8px 40px;
+          margin: 8px 40px 8px 0;
           width: 65%;
           padding: 10px 20px;
         }
@@ -377,7 +377,7 @@ h3 {
 
 
   .funFact {
-    margin-top: 180px;
+    margin-top: 80px;
   }
 
 }
