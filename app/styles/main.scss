@@ -44,8 +44,8 @@ p {
   margin-bottom: 20px;
   margin-top: 0;
   @media (min-width: 960px) {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 20px;
+    line-height: 26px;
   }
 
   &.funFact {
@@ -55,6 +55,23 @@ p {
     padding-top: 10px;
     font-size: 16px;
     line-height: 20px;
+  }
+
+  &.firstCharacter:first-letter  {
+    float: left;
+    
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: black;
+
+    padding-right: 10px;
+    font-size: 76px;
+    line-height: 62px;
+    @media (min-width: 960px) {
+      padding-right: 10px;
+      font-size: 116px;
+      line-height: 104px;
+    }
   }
 
   a {
@@ -94,6 +111,7 @@ h1 {
   line-height: 84px;
   margin-top: 0;
   font-weight: normal;
+  letter-spacing: -2px;
 }
 
 
